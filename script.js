@@ -57,6 +57,8 @@ const eatingOkay = dogs.filter(
 
 console.log(eatingOkay);
 
-const assorted = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+const assorted = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
 
 console.log(assorted);
