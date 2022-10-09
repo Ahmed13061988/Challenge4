@@ -34,6 +34,8 @@ const OwnersEatTooLittle = dogs
   .map((dog) => dog.owners)
   .flat();
 
+console.log(OwnersEatTooLittle, OwnersEatTooMuch);
+
 console.log(
   `${OwnersEatTooMuch[0]} and ${OwnersEatTooMuch[1]} and ${OwnersEatTooMuch[2]}'s dogs eat too much!`
 );
@@ -41,3 +43,5 @@ console.log(
 console.log(
   `${OwnersEatTooLittle[0]} and ${OwnersEatTooLittle[1]} and ${OwnersEatTooLittle[2]}'s dogs eat too little!`
 );
+
+console.log(dogs.some((dog) => dog.recommendedFood === dog.curFood));
