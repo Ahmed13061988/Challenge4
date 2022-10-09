@@ -51,3 +51,7 @@ console.log(dogs.some((dog) => dog.curFood >= dog.recommendedFood));
 const eatingOkay = dogs.filter((dog) => dog.curFood >= dog.recommendedFood);
 
 console.log(eatingOkay);
+
+const assorted = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(assorted);
