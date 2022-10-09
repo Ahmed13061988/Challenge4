@@ -22,8 +22,9 @@ console.log(
     : "Sarah's dog eating less than recommended"
 );
 
-const OwnersEatTooMuch = dogs.filter(
-  (dog) => dog.recommendedFood < dog.curFood
-);
+const OwnersEatTooMuch = dogs
+  .filter((dog) => dog.recommendedFood < dog.curFood)
+  .map((dog) => dog.owners)
+  .flat();
 
 console.log(OwnersEatTooMuch);
