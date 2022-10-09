@@ -35,13 +35,9 @@ const OwnersEatTooLittle = dogs
 
 console.log(OwnersEatTooLittle, OwnersEatTooMuch);
 
-console.log(
-  `${OwnersEatTooMuch[0]} and ${OwnersEatTooMuch[1]} and ${OwnersEatTooMuch[2]}'s dogs eat too much!`
-);
+console.log(`${OwnersEatTooMuch.join(" and ")}'s dogs eating too much!`);
 
-console.log(
-  `${OwnersEatTooLittle[0]} and ${OwnersEatTooLittle[1]} and ${OwnersEatTooLittle[2]}'s dogs eat too little!`
-);
+console.log(`${OwnersEatTooLittle.join(" and ")}'s dogs eating too little!`);
 
 console.log(dogs.some((dog) => dog.recommendedFood === dog.curFood));
 
