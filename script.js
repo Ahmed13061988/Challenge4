@@ -13,3 +13,11 @@ const formula = dogs.map((dog) => {
 });
 
 const sarahDog = dogs.find((dog) => (dog.owners = "Sarah"));
+
+//console.log(sarahDog);
+
+console.log(
+  sarahDog.recommendedFood > sarahDog.curFood
+    ? "Sarah's dog eating more than recommended"
+    : "Sarah's dog eating less than recommended"
+);
