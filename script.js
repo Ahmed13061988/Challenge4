@@ -7,24 +7,37 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ["Michael"] },
 ];
 
-const formula = dogs.map((dog) => {
-  dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28);
-  console.log(dog);
-});
+const formula = function () {
+  dogs.map((dog) => {
+    dog.recommendedFood = dog.weight ** 0.75 * 28;
+  });
+};
+formula();
 
-const sarahDog = dogs.find((dog) => (dog.owners = "Sarah"));
+const h = dogs.map((owner) => owner.owners);
 
-//console.log(sarahDog);
+console.log(h);
 
-console.log(
-  sarahDog.recommendedFood > sarahDog.curFood
-    ? "Sarah's dog eating more than recommended"
-    : "Sarah's dog eating less than recommended"
-);
+// console.log(
+//   sarahDog.recommendedFood > sarahDog.curFood
+//     ? "Sarah's dog eating less than recommended"
+//     : "Sarah's dog eating more than recommended"
+// );
 
 const OwnersEatTooMuch = dogs
   .filter((dog) => dog.recommendedFood < dog.curFood)
   .map((dog) => dog.owners)
   .flat();
 
-console.log(OwnersEatTooMuch);
+const OwnersEatTooLittle = dogs
+  .filter((dog) => dog.recommendedFood > dog.curFood)
+  .map((dog) => dog.owners)
+  .flat();
+
+console.log(
+  `${OwnersEatTooMuch[0]} and ${OwnersEatTooMuch[1]} and ${OwnersEatTooMuch[2]}'s dogs eat too much!`
+);
+
+console.log(
+  `${OwnersEatTooLittle[0]} and ${OwnersEatTooLittle[1]} and ${OwnersEatTooLittle[2]}'s dogs eat too little!`
+);
