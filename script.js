@@ -45,14 +45,14 @@ console.log(
   dogs.some(
     (dog) =>
       dog.curFood > dog.recommendedFood * 0.9 &&
-      dog.curFood < dog.recommendedFood * 0.9
+      dog.curFood < dog.recommendedFood * 1.1
   )
 );
 
 const eatingOkay = dogs.filter(
   (dog) =>
     dog.curFood > dog.recommendedFood * 0.9 &&
-    dog.curFood < dog.recommendedFood * 0.9
+    dog.curFood < dog.recommendedFood * 1.1
 );
 
 console.log(eatingOkay);
