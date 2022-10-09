@@ -45,3 +45,9 @@ console.log(
 );
 
 console.log(dogs.some((dog) => dog.recommendedFood === dog.curFood));
+
+console.log(dogs.some((dog) => dog.curFood >= dog.recommendedFood));
+
+const eatingOkay = dogs.filter((dog) => dog.curFood >= dog.recommendedFood);
+
+console.log(eatingOkay);
