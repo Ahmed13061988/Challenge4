@@ -12,15 +12,22 @@ const formula = function () {
     dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28);
   });
 };
+
 formula();
 console.log(dogs);
 
 const sarahDog = dogs.find((dog) => dog.owners.includes("Sarah"));
 
+// console.log(
+//   sarahDog.recommendedFood > sarahDog.curFood
+//     ? "Sarah's dog eating less than recommended"
+//     : "Sarah's dog eating more than recommended"
+// );
+
 console.log(
-  sarahDog.recommendedFood > sarahDog.curFood
-    ? "Sarah's dog eating less than recommended"
-    : "Sarah's dog eating more than recommended"
+  `Sarah's dog eating ${
+    sarahDog.recommendedFood > sarahDog.curFood ? "less" : "more"
+  } than recommended`
 );
 
 const OwnersEatTooMuch = dogs
