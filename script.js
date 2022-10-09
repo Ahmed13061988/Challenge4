@@ -13,10 +13,7 @@ const formula = function () {
   });
 };
 formula();
-
-const h = dogs.map((owner) => owner.owners);
-
-console.log(h);
+console.log(dogs);
 
 // console.log(
 //   sarahDog.recommendedFood > sarahDog.curFood
@@ -46,9 +43,19 @@ console.log(
 
 console.log(dogs.some((dog) => dog.recommendedFood === dog.curFood));
 
-console.log(dogs.some((dog) => dog.curFood >= dog.recommendedFood));
+console.log(
+  dogs.some(
+    (dog) =>
+      dog.curFood > dog.recommendedFood * 0.9 &&
+      dog.curFood < dog.recommendedFood * 0.9
+  )
+);
 
-const eatingOkay = dogs.filter((dog) => dog.curFood >= dog.recommendedFood);
+const eatingOkay = dogs.filter(
+  (dog) =>
+    dog.curFood > dog.recommendedFood * 0.9 &&
+    dog.curFood < dog.recommendedFood * 0.9
+);
 
 console.log(eatingOkay);
 
