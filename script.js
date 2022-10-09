@@ -8,18 +8,20 @@ const dogs = [
 ];
 
 const formula = function () {
-  dogs.map((dog) => {
-    dog.recommendedFood = dog.weight ** 0.75 * 28;
+  dogs.forEach((dog) => {
+    dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28);
   });
 };
 formula();
 console.log(dogs);
 
-// console.log(
-//   sarahDog.recommendedFood > sarahDog.curFood
-//     ? "Sarah's dog eating less than recommended"
-//     : "Sarah's dog eating more than recommended"
-// );
+const sarahDog = dogs.find((dog) => dog.owners.includes("Sarah"));
+
+console.log(
+  sarahDog.recommendedFood > sarahDog.curFood
+    ? "Sarah's dog eating less than recommended"
+    : "Sarah's dog eating more than recommended"
+);
 
 const OwnersEatTooMuch = dogs
   .filter((dog) => dog.recommendedFood < dog.curFood)
