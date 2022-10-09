@@ -21,3 +21,9 @@ console.log(
     ? "Sarah's dog eating more than recommended"
     : "Sarah's dog eating less than recommended"
 );
+
+const OwnersEatTooMuch = dogs.filter(
+  (dog) => dog.recommendedFood < dog.curFood
+);
+
+console.log(OwnersEatTooMuch);
